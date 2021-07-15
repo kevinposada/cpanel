@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'Detalles del usuario'])
+@extends('layouts.main', ['activePage' => 'productsmanindex', 'titlePage' => 'Detalles del producto'])
 @section('content')
 <div class="content">
   <div class="container-fluid">
@@ -6,8 +6,9 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <div class="card-title">Usuarios</div>
-            <p class="card-category">Vista detallada del usuario {{ $user->name }}</p>
+            <div class="card-title">Productos</div>
+            <p class="card-category">Vista detallada del producto {{ $product->title }}</p>
+            {{$product}}
           </div>
           <!--body-->
           <div class="card-body">
@@ -24,12 +25,12 @@
                       <div class="author">
                         <a href="#">
                           <img src="{{ asset('/img/default-avatar.png') }}" alt="image" class="avatar">
-                          <h5 class="title mt-3">{{ $user->name }}</h5>
+                          <h5 class="title mt-3">{{ $product->title }}</h5>
                         </a>
                         <p class="description">
-                        {{ $user->username }} <br>
-                        {{ $user->email }} <br>
-                        {{ $user->created_at }}
+                        {{ $product->descripcion }} <br>
+                        {{ $product->price }} <br>
+                        {{ $product->created_at }}
                         </p>
                       </div>
                     </p>
@@ -52,12 +53,12 @@
                       <div class="author">
                         <a href="#" class="d-flex">
                           <img src="{{ asset('/img/default-avatar.png') }}" alt="image" class="avatar">
-                          <h5 class="title mx-3">{{ $user->name }}</h5>
+                          <h5 class="title mx-3">{{ $product->title }}</h5>
                         </a>
                         <p class="description">
-                          {{ $user->username }} <br>
-                          {{ $user->email }} <br>
-                          {{ $user->created_at }}
+                          {{ $product->descripcion }} <br>
+                          {{ $product->price }} <br>
+                          {{ $product->created_at }}
                         </p>
                       </div>
                     </p>
@@ -68,7 +69,7 @@
                   </div>
                   <div class="card-footer">
                     <div class="button-container">
-                      <a href="{{ route('users.index') }}" class="btn btn-sm btn-success mr-3"> Volver </a>
+                      <a href="{{ route('productsmanage.index') }}" class="btn btn-sm btn-success mr-3"> Volver </a>
                       <button class="btn btn-sm btn-primary">Editar</button>
                     </div>
                   </div>
@@ -83,31 +84,31 @@
                       <tbody>
                         <tr>
                           <th>ID</th>
-                          <td>{{ $user->id }}
+                          <td>{{ $product->id }}
                           </td>
                         </tr>
                         <tr>
                           <th>Name</th>
-                          <td>{{ $user->name }}</td>
+                          <td>{{ $product->title }}</td>
                         </tr>
                         <tr>
                           <th>Email</th>
-                          <td><span class="badge badge-primary">{{ $user->email }}</span></td>
+                          <td><span class="badge badge-primary">{{ $product->descripcion }}</span></td>
                         </tr>
                         <tr>
                           <th>Username</th>
-                          <td>{!! $user->username !!}</td>
+                          <td>{!! $product->price !!}</td>
                         </tr>
                         <tr>
                           <th>Created at</th>
-                          <td><a href="#" target="_blank">{{  $user->created_at  }}</a></td>
+                          <td><a href="#" target="_blank">{{  $product->created_at  }}</a></td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <div class="card-footer">
                     <div class="button-container">
-                      <a href="{{ route('users.index') }}" class="btn btn-sm btn-success mr-3"> Volver </a>
+                      <a href="{{ route('productsmanage.index') }}" class="btn btn-sm btn-success mr-3"> Volver </a>
                       <a href="#" class="btn btn-sm btn-twitter"> Editar </a>
                     </div>
                   </div>
