@@ -55,38 +55,6 @@
         </a>
       </li>
 
-      @can('productsmanage.index')
-        <li class="nav-item {{ ($activePage == 'products-management') ? ' active' : '' }}">
-          <a class="nav-link" data-toggle="collapse" href="#productsDrop" aria-expanded="true">
-            <i><img style="width:25px" src="{{ asset('img/laravel.svg') }}"></i>
-            <p>{{ __('Control Productos') }}
-              <b class="caret"></b>
-            </p>
-          </a>
-          <div class="collapse show" id="productsDrop">
-            <ul class="nav">
-              @can('productsmanage.index')
-                <li class="nav-item{{ $activePage == 'productsmanindex' ? ' active' : '' }}">
-                  <a class="nav-link" href="{{ route('productsmanage.index') }}">
-                    <span class="sidebar-mini"> U </span>
-                    <span class="sidebar-normal">{{ __('Productos') }} </span>
-                  </a>
-                </li>
-              @endcan
-              @can('productsmanage.create')
-                <li class="nav-item{{ $activePage == 'productscreate' ? ' active' : '' }}">
-                  <a class="nav-link" href="{{ route('productsmanage.create') }}">
-                    <span class="sidebar-mini"> U </span>
-                    <span class="sidebar-normal">{{ __('Crear Producto') }} </span>
-                  </a>
-                </li>
-              @endcan
-            </ul>
-          </div>
-        </li>
-      @endcan
-
-
     </ul>
   </div>
 </div>

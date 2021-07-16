@@ -34,5 +34,3 @@ Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name(
 
 Route::resource('user', UserController::class)->names('users');
 Route::resource('product', ProductController::class)->names('products');
-Route::resource('productmanage', ProductController::class)->names('productsmanage');
-Route::get('/productmanage', [ProductController::class, 'manindex'])->name('productsmanage.index');
