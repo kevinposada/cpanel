@@ -34,3 +34,7 @@ Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name(
 
 Route::resource('user', UserController::class)->names('users');
 Route::resource('product', ProductController::class)->names('products');
+
+Route::get('billing', function ($id) {
+    
+});
