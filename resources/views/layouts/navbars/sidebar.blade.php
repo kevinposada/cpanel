@@ -55,6 +55,31 @@
         </a>
       </li>
 
+
+      {{-- Profile --}}
+      <li class="nav-item {{ ($activePage == 'profile') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#profileDrop" aria-expanded="true">
+          <i><img style="width:25px" src="{{ asset('img/laravel.svg') }}"></i>
+          <p>{{ __('Perfil de usuario') }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse show" id="profileDrop">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'billing' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('billing.index') }}">
+                <span class="sidebar-mini"> F </span>
+                <span class="sidebar-normal">{{ __('Facturación') }} </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+
+
+
+
     </ul>
   </div>
 </div>

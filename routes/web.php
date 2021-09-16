@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BillingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -35,6 +36,4 @@ Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name(
 Route::resource('user', UserController::class)->names('users');
 Route::resource('product', ProductController::class)->names('products');
 
-Route::get('billing', function ($id) {
-    
-});
+Route::get('billing', [BillingController::class, 'index'])->middleware('auth')->name('billing.index');
