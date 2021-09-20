@@ -37,10 +37,10 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'kevin',
-            'email' => 'kevin@gmail.com',
+            'email' => 'posada772@gmail.com',
             'username' => 'kevin',
             'password' => bcrypt('admin123')
-        ]);
+        ])->assignRole('admin')->createAsStripeCustomer();
 
         User::factory(7)->create();
     }

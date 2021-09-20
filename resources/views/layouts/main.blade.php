@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> --}}
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ asset('vendor/livewire/livewire.js?id=21fa1dd78491a49255cd') }}" data-turbolinks-eval="false"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     @isset($css)
         {{$css}}
@@ -35,9 +39,12 @@
         <script src="{{ asset('js/core/popper.min.js') }}"></script>
         <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
         <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-        @isset($js)
+
+
+        {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script> --}}
+        {{-- @isset($js)
             {{$js}}
-        @endisset
-        {{-- @stack('js') --}}
+        @endisset --}}
+        @stack('js')
     </body>
 </html>
